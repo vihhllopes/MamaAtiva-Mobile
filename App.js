@@ -1,38 +1,21 @@
-import { StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Main from './pages/Main/Main';
 
+const Stack = createNativeStackNavigator();
 
-
-export default function App({}) {
-
+function MyStack() {
   return (
-    <View style={styles.container}>
-      <ImageBackground
-      source={require('./assets/backgroundT1.png')}
-    style={styles.img}>
-     
-      <Button
-        title="Go to Profile"
-        
-      />
-      </ImageBackground>
-
-    </View>
-  
+    <Stack.Navigator>
+      <Stack.Screen name="main" component={Main} options={{ headerShown: false }} />
+    </Stack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-  flex: 1,
-    flexDirection: "column"
-
-    
-    
-  },
-  img:{
- flex: 1,
-    resizeMode: "cover",
-    justifyContent: "center",
-    alignItems: "center"
-  },
-});
+export default function Appdois() {
+   return (
+    <NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
+  );
+}
