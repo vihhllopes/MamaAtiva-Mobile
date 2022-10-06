@@ -2,36 +2,44 @@ import { StyleSheet, Text, View, ImageBackground,Button } from 'react-native';
 import WhiteButton from '../../components/button/Button';
 
 
-export default function Main() {
+const Main = ({ navigation }) =>(
 
-  return (
+  
     <View style={styles.container}>
       <ImageBackground
       source={require('../../assets/backgroundT1.png')}
-    style={styles.img}>
-     
+    style={styles.imageBackground}>
+      
       <WhiteButton
-        />
-        <Text>Deseja Cadastra-se?</Text>
+      
+         />
+      <Text style={styles.Text} onPress={() => navigation.navigate('StepOne')} >Deseja Cadastra-se?</Text>
       </ImageBackground>
 
     </View>
   
   );
-}
+
 
 const styles = StyleSheet.create({
   container: {
   flex: 1,
-    flexDirection: "column"
+    flexDirection: "column",
 
     
     
   },
-  img:{
+  imageBackground:{
  flex: 1,
     resizeMode: "cover",
     justifyContent: "center",
     alignItems: "center"
   },
+  Text:{
+    color:'#E0E6ED',
+    fontSize:14,
+  marginTop:32,
+  fontWeight: "bold",
+  },
 });
+export default Main;
