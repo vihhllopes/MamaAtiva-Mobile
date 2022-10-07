@@ -2,7 +2,7 @@ import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
 import { Card } from '@rneui/themed';
 
 
-export default function StepOne({ navigation }) {
+export default function StepTwo({navigation}) {
     return (
         <View  >
             <View style={styles.container}>
@@ -16,14 +16,15 @@ export default function StepOne({ navigation }) {
             <View
             >
                 <Card containerStyle={{ marginTop: 50, textAlign: 'center', elevation: 5, borderRadius: 5, padding: 50, }}>
-                    <Card.Image source={require('../../assets/one.png')} style={styles.step} ></Card.Image>
+                    <Card.Image source={require('../../assets/two.png')} style={styles.step} ></Card.Image>
 
-                    <Text style={styles.stepText}>O frasco que armazenará o leite deve ser de vidro com tampa de plástico, como os de café solúvel. Antes de utilizá-lo, esterelize-o em água fervente por 15 minutos.</Text>
+                    <Text style={styles.stepText}>A doadora deve estar de cabelos presos e idealmente máscara no rosto. Massageie as mamas em movimentos circulares para que o leite seja retirado de todas as regiões do peito.
+                        Inicie a coleta no frasco previamente esterelizado.</Text>
                 </Card>
             </View>
             <View style={styles.container}>
                 <TouchableOpacity
-                >
+                    onPress={() => navigation.navigate('StepOne')}>
                     <Image
                         source={require('../../assets/botaoVoltar.png')}
                         style={styles.buttonImageBackStyle}
@@ -31,7 +32,7 @@ export default function StepOne({ navigation }) {
 
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('StepTwo')} >
+                    onPress={() => navigation.navigate('StepThree')}>
                     <Image
                         source={require('../../assets/botaoAvancar.png')}
                         style={styles.buttonImageIconStyle}
@@ -65,7 +66,6 @@ const styles = StyleSheet.create({
         marginTop: 20,
         textAlign: "center",
         fontSize: 20,
-       
         color: '#000',
 
     },
@@ -92,12 +92,12 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     buttonImageIconStyle: {
-        marginLeft: 180,
-        marginTop: 50,
+        marginLeft: 195,
+        marginTop: 35,
     },
     buttonImageBackStyle: {
         marginLeft: 50,
-        marginTop: 50,
+        marginTop: 35,
     }
 
 

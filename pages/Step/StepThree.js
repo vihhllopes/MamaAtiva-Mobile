@@ -2,7 +2,7 @@ import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
 import { Card } from '@rneui/themed';
 
 
-export default function StepOne({ navigation }) {
+export default function StepThree({navigation}) {
     return (
         <View  >
             <View style={styles.container}>
@@ -15,15 +15,17 @@ export default function StepOne({ navigation }) {
             </View>
             <View
             >
-                <Card containerStyle={{ marginTop: 50, textAlign: 'center', elevation: 5, borderRadius: 5, padding: 50, }}>
-                    <Card.Image source={require('../../assets/one.png')} style={styles.step} ></Card.Image>
+                <Card containerStyle={{ marginTop: 50, textAlign: 'center', elevation: 5, borderRadius: 5, padding:50, }}>
+                    <Card.Image source={require('../../assets/three.png')} style={styles.step} ></Card.Image>
 
-                    <Text style={styles.stepText}>O frasco que armazenará o leite deve ser de vidro com tampa de plástico, como os de café solúvel. Antes de utilizá-lo, esterelize-o em água fervente por 15 minutos.</Text>
+                    <Text style={styles.stepText}>Após o fim da coleta, tampe o frasco, armazene-o no congelador e entre em contato com o banco
+                        de leite que desejar.
+                        O leite pode ficar armazenado por até 15 dias.</Text>
                 </Card>
             </View>
             <View style={styles.container}>
                 <TouchableOpacity
-                >
+                    onPress={() => navigation.navigate('StepTwo')}  >
                     <Image
                         source={require('../../assets/botaoVoltar.png')}
                         style={styles.buttonImageBackStyle}
@@ -31,7 +33,7 @@ export default function StepOne({ navigation }) {
 
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('StepTwo')} >
+                   >
                     <Image
                         source={require('../../assets/botaoAvancar.png')}
                         style={styles.buttonImageIconStyle}
@@ -65,7 +67,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         textAlign: "center",
         fontSize: 20,
-       
+
         color: '#000',
 
     },
@@ -83,7 +85,7 @@ const styles = StyleSheet.create({
     step: {
         width: 170,
         height: 150,
-        marginLeft: 45,
+        marginLeft:45,
     },
     stepText: {
         marginTop: 20,
@@ -92,12 +94,12 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     buttonImageIconStyle: {
-        marginLeft: 180,
-        marginTop: 50,
+        marginLeft: 195,
+        marginTop: 40,
     },
     buttonImageBackStyle: {
         marginLeft: 50,
-        marginTop: 50,
+        marginTop: 40,
     }
 
 
