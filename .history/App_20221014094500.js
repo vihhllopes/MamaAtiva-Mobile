@@ -5,7 +5,6 @@ import StepOne from './pages/Step/StepOne';
 import StepTwo from './pages/Step/StepTwo';
 import StepThree from './pages/Step/StepThree';
 import Requisitos from './pages/Requisitos/Requisitos';
-
 const Stack = createNativeStackNavigator();
 
 function MyStack() {
