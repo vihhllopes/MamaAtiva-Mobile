@@ -1,47 +1,46 @@
-import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
-import { Card } from '@rneui/themed';
+import { View, StyleSheet, Image,  TouchableOpacity } from "react-native";
 
+import {  Card, Center,Text} from "native-base";
+import { CardBase } from "@rneui/base/dist/Card/Card";
 
-export default function StepThree({navigation}) {
+export default function StepOne({ navigation }) {
     return (
+        <Center w="100%" >
         <View  >
             <View style={styles.container}>
                 <Image source={require('../../assets/perfil.png')} style={styles.imagePerfil} />
                 <Image source={require('../../assets/logo.png')} style={styles.logo} />
             </View>
             <View style={styles.containerTitle}>
-                <Card.Title style={styles.title} >Coletando o leite
-                    de forma correta</Card.Title>
+                <Text style={styles.title} >Coletando o leite
+                    de forma correta</Text>
             </View>
             <View
             >
-                <Card containerStyle={{ marginTop: 50, textAlign: 'center', elevation: 5, borderRadius: 5, padding:50, }}>
-                    <Card.Image source={require('../../assets/three.png')} style={styles.step} ></Card.Image>
+                <CardBase containerStyle={{ marginTop: 50,  elevation: 5, borderRadius: 5, padding:50, }}>
+                    <Center>
+                    <Image source={require('../../assets/three.png')} style={styles.step} ></Image>
 
                     <Text style={styles.stepText}>Após o fim da coleta, tampe o frasco, armazene-o no congelador e entre em contato com o banco
                         de leite que desejar.
                         O leite pode ficar armazenado por até 15 dias.</Text>
-                </Card>
+                    </Center>
+                </CardBase>
             </View>
             <View style={styles.container}>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('StepTwo')}  >
+                onPress={() => navigation.navigate('StepTwo')}
+                >
                     <Image
                         source={require('../../assets/botaoVoltar.png')}
                         style={styles.buttonImageBackStyle}
                     />
 
                 </TouchableOpacity>
-                <TouchableOpacity
-                   >
-                    <Image
-                        source={require('../../assets/botaoAvancar.png')}
-                        style={styles.buttonImageIconStyle}
-                    />
-
-                </TouchableOpacity>
+               
             </View>
         </View>
+        </Center>
     );
 }
 const styles = StyleSheet.create({
@@ -64,12 +63,11 @@ const styles = StyleSheet.create({
         left: 45,
     },
     title: {
-        marginTop: 20,
+       padding:10,
         textAlign: "center",
-        fontSize: 20,
-
-        color: '#000',
-
+        fontSize: 25,
+         fontFamily:"Quicksand",
+         fontWeight:"650",
     },
     containerTitle: {
         marginTop: 50,
@@ -77,29 +75,26 @@ const styles = StyleSheet.create({
         padding: 10,
         elevation: 10,
     },
-    card: {
-
-        justifyContent: 'center',
-        borderRadius: 20,
-    },
+   
     step: {
         width: 170,
         height: 150,
-        marginLeft:45,
     },
     stepText: {
         marginTop: 20,
         fontSize: 17,
         textAlign: "center",
-        fontWeight: "bold",
+        fontFamily:"Quicksand",
+    
+        
     },
     buttonImageIconStyle: {
-        marginLeft: 195,
-        marginTop: 40,
+        marginLeft: 180,
+        marginTop: 50,
     },
     buttonImageBackStyle: {
         marginLeft: 50,
-        marginTop: 40,
+        marginTop: 50,
     }
 
 

@@ -1,30 +1,36 @@
-import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
-import { Card } from '@rneui/themed';
 
+import { View, StyleSheet, Image,  TouchableOpacity } from "react-native";
 
-export default function StepTwo({navigation}) {
+import {  Card, Center,Text} from "native-base";
+import { CardBase } from "@rneui/base/dist/Card/Card";
+
+export default function StepOne({ navigation }) {
     return (
+        <Center w="100%" >
         <View  >
             <View style={styles.container}>
                 <Image source={require('../../assets/perfil.png')} style={styles.imagePerfil} />
                 <Image source={require('../../assets/logo.png')} style={styles.logo} />
             </View>
             <View style={styles.containerTitle}>
-                <Card.Title style={styles.title} >Coletando o leite
-                    de forma correta</Card.Title>
+                <Text style={styles.title} >Coletando o leite
+                    de forma correta</Text>
             </View>
             <View
             >
-                <Card containerStyle={{ marginTop: 50, textAlign: 'center', elevation: 5, borderRadius: 5, padding: 50, }}>
-                    <Card.Image source={require('../../assets/two.png')} style={styles.step} ></Card.Image>
+                <CardBase containerStyle={{ marginTop: 50,  elevation: 5, borderRadius: 5, padding:50, }}>
+                    <Center>
+                    <Image source={require('../../assets/two.png')} style={styles.step} ></Image>
 
                     <Text style={styles.stepText}>A doadora deve estar de cabelos presos e idealmente máscara no rosto. Massageie as mamas em movimentos circulares para que o leite seja retirado de todas as regiões do peito.
                         Inicie a coleta no frasco previamente esterelizado.</Text>
-                </Card>
+                    </Center>
+                </CardBase>
             </View>
             <View style={styles.container}>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('StepOne')}>
+                 onPress={() => navigation.navigate('StepOne')}
+                >
                     <Image
                         source={require('../../assets/botaoVoltar.png')}
                         style={styles.buttonImageBackStyle}
@@ -32,7 +38,7 @@ export default function StepTwo({navigation}) {
 
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('StepThree')}>
+                    onPress={() => navigation.navigate('StepThree')} >
                     <Image
                         source={require('../../assets/botaoAvancar.png')}
                         style={styles.buttonImageIconStyle}
@@ -41,6 +47,7 @@ export default function StepTwo({navigation}) {
                 </TouchableOpacity>
             </View>
         </View>
+        </Center>
     );
 }
 const styles = StyleSheet.create({
@@ -63,11 +70,11 @@ const styles = StyleSheet.create({
         left: 45,
     },
     title: {
-        marginTop: 20,
+       padding:10,
         textAlign: "center",
-        fontSize: 20,
-        color: '#000',
-
+        fontSize: 25,
+         fontFamily:"Quicksand",
+         fontWeight:"650",
     },
     containerTitle: {
         marginTop: 50,
@@ -75,29 +82,26 @@ const styles = StyleSheet.create({
         padding: 10,
         elevation: 10,
     },
-    card: {
-
-        justifyContent: 'center',
-        borderRadius: 20,
-    },
+   
     step: {
         width: 170,
         height: 150,
-        marginLeft: 45,
     },
     stepText: {
         marginTop: 20,
         fontSize: 17,
         textAlign: "center",
-        fontWeight: "bold",
+        fontFamily:"Quicksand",
+    
+        
     },
     buttonImageIconStyle: {
-        marginLeft: 195,
-        marginTop: 35,
+        marginLeft: 180,
+        marginTop: 30,
     },
     buttonImageBackStyle: {
         marginLeft: 50,
-        marginTop: 35,
+        marginTop: 0,
     }
 
 

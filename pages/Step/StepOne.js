@@ -1,27 +1,36 @@
-import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
-import { Card } from '@rneui/themed';
-import {   Box, Heading, VStack, FormControl, Input, Link, Button, HStack, Center, Modal, NativeBaseProvider } from "native-base";
+import { View, StyleSheet, Image,  TouchableOpacity } from "react-native";
+
+import {  Card, Center,Box,Text} from "native-base";
+import { Header } from "@rneui/base";
+
 
 export default function StepOne({ navigation }) {
     return (
-        <Center w="100%" h="100%">
-            
         <View  >
             <View style={styles.container}>
                 <Image source={require('../../assets/perfil.png')} style={styles.imagePerfil} />
                 <Image source={require('../../assets/logo.png')} style={styles.logo} />
             </View>
             <View style={styles.containerTitle}>
-                <Card.Title style={styles.title}>Coletando o leite
-                    de forma correta</Card.Title>
+                <Box color="whiteSnow" maxWidth="100%">
+                <Text style={styles.title} >Coletando o leite
+                    de forma correta</Text>
+                    </Box>
             </View>
             <View
             >
-                <Card containerStyle={{ marginTop: 50, textAlign: 'center', elevation: 5, borderRadius: 5, padding: 50, }}>
-                    <Card.Image source={require('../../assets/one.png')} style={styles.step} ></Card.Image>
+                <View>
+                <Center>
+                    <Box bg="#ffff" padding={50} shadow={2} rounded="lg" maxWidth="95%" marginTop={10} >
+                    <Center>
+                    <Image source={require('../../assets/one.png')} style={styles.step} ></Image>
 
                     <Text style={styles.stepText}>O frasco que armazenará o leite deve ser de vidro com tampa de plástico, como os de café solúvel. Antes de utilizá-lo, esterelize-o em água fervente por 15 minutos.</Text>
-                </Card>
+                    </Center>
+                </Box>
+                </Center>
+              </View>
+                
             </View>
             <View style={styles.container}>
                 <TouchableOpacity
@@ -42,7 +51,7 @@ export default function StepOne({ navigation }) {
                 </TouchableOpacity>
             </View>
         </View>
-        </Center>
+
     );
 }
 const styles = StyleSheet.create({
@@ -65,12 +74,11 @@ const styles = StyleSheet.create({
         left: 45,
     },
     title: {
-        marginTop: 20,
+       padding:10,
         textAlign: "center",
-        fontSize: 20,
-       
-        color:"primary",
+        fontSize: 25,
          fontFamily:"Quicksand",
+         fontWeight:"650",
     },
     containerTitle: {
         marginTop: 50,
@@ -78,22 +86,18 @@ const styles = StyleSheet.create({
         padding: 10,
         elevation: 10,
     },
-    card: {
-
-        justifyContent: 'center',
-        borderRadius: 20,
-    },
+   
     step: {
         width: 170,
         height: 150,
-        marginLeft: 45,
     },
     stepText: {
         marginTop: 20,
         fontSize: 17,
         textAlign: "center",
         fontFamily:"Quicksand",
-        color:"primary",
+    
+        
     },
     buttonImageIconStyle: {
         marginLeft: 180,
