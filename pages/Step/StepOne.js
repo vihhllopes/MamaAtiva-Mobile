@@ -1,16 +1,18 @@
 import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
 import { Card } from '@rneui/themed';
-
+import {   Box, Heading, VStack, FormControl, Input, Link, Button, HStack, Center, Modal, NativeBaseProvider } from "native-base";
 
 export default function StepOne({ navigation }) {
     return (
+        <Center w="100%" h="100%">
+            
         <View  >
             <View style={styles.container}>
                 <Image source={require('../../assets/perfil.png')} style={styles.imagePerfil} />
                 <Image source={require('../../assets/logo.png')} style={styles.logo} />
             </View>
             <View style={styles.containerTitle}>
-                <Card.Title style={styles.title} >Coletando o leite
+                <Card.Title style={styles.title}>Coletando o leite
                     de forma correta</Card.Title>
             </View>
             <View
@@ -40,6 +42,7 @@ export default function StepOne({ navigation }) {
                 </TouchableOpacity>
             </View>
         </View>
+        </Center>
     );
 }
 const styles = StyleSheet.create({
@@ -66,8 +69,8 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 20,
        
-        color: '#000',
-
+        color:"primary",
+         fontFamily:"Quicksand",
     },
     containerTitle: {
         marginTop: 50,
@@ -89,7 +92,8 @@ const styles = StyleSheet.create({
         marginTop: 20,
         fontSize: 17,
         textAlign: "center",
-        fontWeight: "bold",
+        fontFamily:"Quicksand",
+        color:"primary",
     },
     buttonImageIconStyle: {
         marginLeft: 180,
