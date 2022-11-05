@@ -1,7 +1,5 @@
 import { View, StyleSheet, Image,  TouchableOpacity } from "react-native";
-
-import {  Card, Center,Box,Text} from "native-base";
-import { Header } from "@rneui/base";
+import { Card, Center, Box, Text} from "native-base";
 
 
 export default function StepOne({ navigation }) {
@@ -17,8 +15,7 @@ export default function StepOne({ navigation }) {
                     de forma correta</Text>
                     </Box>
             </View>
-            <View
-            >
+            <View>
                 <View>
                 <Center>
                     <Box bg="#ffff" padding={50} shadow={2} rounded="lg" maxWidth="95%" marginTop={10} >

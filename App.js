@@ -7,6 +7,9 @@ import StepOne from './pages/Step/StepOne';
 import StepTwo from './pages/Step/StepTwo';
 import StepThree from './pages/Step/StepThree';
 import Requisitos from './pages/Requisitos/Requisitos';
+import MilkBank from './pages/MilkBanks/MilkBank';
+import Show from './pages/MilkBanks/Show';
+
 const theme = extendTheme({
   fontConfig: {
     Quicksand: {
@@ -57,11 +60,11 @@ const theme = extendTheme({
     },
   },
   // Make sure values below matches any of the keys in `fontConfig`
-  fonts: {
-    heading: "Quicksand",
-    body: "RobotoSlab",
-    mono: "Quicksand",
-  },
+  // fonts: {
+  //   heading: "Quicksand",
+  //   body: "RobotoSlab",
+  //   mono: "Quicksand",
+  // },
   colors: {
       primary: '#9098E0',
       secondary: '#B2DECD',
@@ -104,12 +107,14 @@ export default function App() {
     <NativeBaseProvider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="main" component={Main} options={{ headerShown: false }} />
-      <Stack.Screen name="StepOne" component={StepOne} options={{ headerShown: false }} />
-      <Stack.Screen name="StepTwo" component={StepTwo} options={{ headerShown: false }} />
-      <Stack.Screen name="StepThree" component={StepThree} options={{ headerShown: false }} />
-      <Stack.Screen name="Requisitos" component={Requisitos} options={{ headerShown: false }} />
-        </Stack.Navigator>
+          <Stack.Screen name="main" component={Main} options={{ headerShown: false }} />
+          <Stack.Screen name="StepOne" component={StepOne} options={{ headerShown: false }} />
+          <Stack.Screen name="StepTwo" component={StepTwo} options={{ headerShown: false }} />
+          <Stack.Screen name="StepThree" component={StepThree} options={{ headerShown: false }} />
+          <Stack.Screen name="Requisitos" component={Requisitos} options={{ headerShown: false }} />
+          <Stack.Screen name="MilkBank" component={MilkBank} options={{ headerShown: false }} />
+          <Stack.Screen name="Show" component={Show} options={{ headerShown: false }} />
+          </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
   );

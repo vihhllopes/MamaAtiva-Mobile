@@ -37,6 +37,14 @@ export default function StepOne({ navigation }) {
                     />
 
                 </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('MilkBank')} >
+                    <Image
+                        source={require('../../assets/botaoAvancar.png')}
+                        style={styles.buttonImageIconStyle}
+                    />
+
+                </TouchableOpacity>                
                
             </View>
         </View>
