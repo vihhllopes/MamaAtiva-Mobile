@@ -9,7 +9,10 @@ import StepThree from './pages/Step/StepThree';
 import Requisitos from './pages/Requisitos/Requisitos';
 import MilkBank from './pages/MilkBanks/MilkBank';
 import Show from './pages/MilkBanks/Show';
-
+import Login from './pages/Login/LoginScreen';
+import SignUp from './pages/Login/SignUpScreen';
+import RecoverPasswordStep1 from './pages/Login/Password/RecoverPasswordStep1';
+import RecoverPasswordStep2 from './pages/Login/Password/RecoverPasswordStep2';
 const theme = extendTheme({
   fontConfig: {
     Quicksand: {
@@ -106,14 +109,21 @@ export default function App() {
   return (
     <NativeBaseProvider theme={theme}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
+        <Stack.Navigator >
           <Stack.Screen name="main" component={Main} options={{ headerShown: false }} />
+          <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+          <Stack.Screen name="SignUp" component={SignUp} options={{  headerShown: false }}/>
           <Stack.Screen name="StepOne" component={StepOne} options={{ headerShown: false }} />
           <Stack.Screen name="StepTwo" component={StepTwo} options={{ headerShown: false }} />
           <Stack.Screen name="StepThree" component={StepThree} options={{ headerShown: false }} />
           <Stack.Screen name="Requisitos" component={Requisitos} options={{ headerShown: false }} />
           <Stack.Screen name="MilkBank" component={MilkBank} options={{ headerShown: false }} />
           <Stack.Screen name="Show" component={Show} options={{ headerShown: false }} />
+          <Stack.Screen name="RecoverPasswordStep1" component={RecoverPasswordStep1}  options={{  headerShown: false  }}/>       
+          <Stack.Screen name="RecoverPasswordStep2" component={RecoverPasswordStep2} 
+          options={{ 
+              headerShown: false 
+            }} />
           </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
