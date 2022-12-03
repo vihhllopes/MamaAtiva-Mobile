@@ -32,20 +32,7 @@ export default function MilkBank({ navigation }) {
             <View>
                 <CardMB />
             </View>
-            <View style={styles.container}>
-                <TouchableOpacity>
-                    <Image
-                        source={require('../../assets/botaoVoltar.png')}
-                        style={styles.buttonImageBackStyle}
-                    />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Show')}>
-                    <Image
-                        source={require('../../assets/botaoAvancar.png')}
-                        style={styles.buttonImageIconStyle}
-                    />
-                </TouchableOpacity>
-            </View>
+           
         </ScrollView>
     );
 }

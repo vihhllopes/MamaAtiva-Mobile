@@ -37,14 +37,9 @@ export default function StepOne({ navigation }) {
                     />
 
                 </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => navigation.navigate('MilkBank')} >
-                    <Image
-                        source={require('../../assets/botaoAvancar.png')}
-                        style={styles.buttonImageIconStyle}
-                    />
+               
 
-                </TouchableOpacity>                
+                      
                
             </View>
         </View>
@@ -62,11 +57,11 @@ const styles = StyleSheet.create({
         height: 70,
         marginTop: 90,
         left: 20,
-
+        borderRadius: 100,
     },
     logo: {
-        width: 160,
-        height: 72,
+        width: 200,
+        height: 90,
         marginTop: 85,
         left: 45,
     },

@@ -57,7 +57,7 @@ export default function Login ({ navigation })  {
                 _pressed={{
                   bg: 'active'
                 }}
-                onPress={() => navigation.navigate('Requisitos')}
+                onPress={() => navigation.navigate('Home')}
               >
                 <Text fontFamily="Quicksand" fontWeight="600" color="black">
                   Entrar

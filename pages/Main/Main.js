@@ -2,9 +2,9 @@ import { StyleSheet, Text, View, ImageBackground,TouchableOpacity } from 'react-
 import WhiteButton from '../../components/button/Button';
 
 
-const Main = ({ navigation }) =>(
+export default function Main ({ navigation }) {
+  return(
 
-  
     <View style={styles.container}>
       <ImageBackground
       source={require('../../assets/backgroundT1.png')}
@@ -14,12 +14,12 @@ const Main = ({ navigation }) =>(
             <Text style={styles.textButtonWhite} >Entrar</Text>
         </TouchableOpacity>
      
-      <Text style={styles.Text} onPress={() => navigation.navigate('StepOne')} >Deseja Cadastra-se?</Text>
+      <Text style={styles.Text} onPress={() => navigation.navigate('SignUp')} >Deseja Cadastra-se?</Text>
       </ImageBackground>
 
     </View>
-  
-  );
+  )
+}
 
 
 const styles = StyleSheet.create({
@@ -60,4 +60,3 @@ const styles = StyleSheet.create({
     }
 
 });
-export default Main;

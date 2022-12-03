@@ -55,17 +55,16 @@ const styles = StyleSheet.create({
         color: '#F1F1F1',
         flexDirection: "row",
 
-    },
-    imagePerfil: {
+    }, imagePerfil: {
         width: 70,
         height: 70,
         marginTop: 90,
         left: 20,
-
+        borderRadius: 100,
     },
     logo: {
-        width: 160,
-        height: 72,
+        width: 200,
+        height: 90,
         marginTop: 85,
         left: 45,
     },
@@ -101,7 +100,7 @@ const styles = StyleSheet.create({
     },
     buttonImageBackStyle: {
         marginLeft: 50,
-        marginTop: 0,
+        marginTop: 30,
     }
 
 
