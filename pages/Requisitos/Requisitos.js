@@ -21,53 +21,45 @@ export default function Requisitos({ navigation }) {
             <View style={styles.containerTitle}>
                 <Text style={styles.title}>o que eu preciso para ser doadora?</Text>
             </View>
-            <ScrollView>
-                <View>
+            <ScrollView style={{padding: 30}}>
+                <View style={styles.layout} >
                     <Image
                         source={require('../../assets/saude.png')}
                         style={styles.icons}
                     />
+                     <Text style={styles.text}>Estar saudavel</Text>
                 </View>
-                <Text style={styles.text}>Estar saudavel</Text>
+               
                 <View>
                     <Image
                         source={require('../../assets/milk.png')}
                         style={styles.icons}
+                        
                     />
+                     <Text style={styles.text}>Produzir leite materno excendente</Text>
                 </View>
-                <Text style={styles.leite}>Produzir leite materno excendente</Text>
+               
 
                 <View>
                     <Image
                         source={require('../../assets/remedios.png')}
                         style={styles.icons}
                     />
+                    <Text style={styles.text}>Produzir leite materno excendente</Text>
                 </View>
-                <Text style={styles.rm}>Produzir leite materno excendente</Text>
+                
                 <View>
                     <Image
                         source={require('../../assets/mao.png')}
                         style={styles.icons}
                     />
-                </View>
-                <Text style={styles.ajuda}>
+                    <Text style={styles.text}>
                     Se dispor a ordenhar e doar o excedente a um banco de leite humano.
                 </Text>
+                </View>
+                
             </ScrollView>
-            <View style={styles.container}>
-                <TouchableOpacity>
-                    <Image
-                        source={require('../../assets/botaoVoltar.png')}
-                        style={styles.buttonImageBackStyle}
-                    />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('StepTwo')}>
-                    <Image
-                        source={require('../../assets/botaoAvancar.png')}
-                        style={styles.buttonImageIconStyle}
-                    />
-                </TouchableOpacity>
-            </View>
+          
         </ScrollView>
     );
 }
@@ -75,11 +67,13 @@ const styles = StyleSheet.create({
     container: {
         color: '#F1F1F1',
         flexDirection: 'row',
+        
     },
 
     text: {
         marginTop: 20,
         textAlign: 'center',
+        fontFamily:"Quicksand",
     },
 
     imagePerfil: {
@@ -87,19 +81,20 @@ const styles = StyleSheet.create({
         height: 70,
         marginTop: 90,
         left: 20,
+        borderRadius: 100,
     },
     logo: {
-        width: 160,
-        height: 72,
+        width: 200,
+        height: 90,
         marginTop: 85,
         left: 45,
     },
     title: {
-        marginTop: 20,
-        textAlign: 'center',
-        fontSize: 20,
-
-        color: '#000',
+        padding:10,
+        textAlign: "center",
+        fontSize: 25,
+         fontFamily:"Quicksand",
+         fontWeight:"650",
     },
     containerTitle: {
         marginTop: 50,

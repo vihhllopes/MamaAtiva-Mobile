@@ -13,6 +13,9 @@ import Login from './pages/Login/LoginScreen';
 import SignUp from './pages/Login/SignUpScreen';
 import RecoverPasswordStep1 from './pages/Login/Password/RecoverPasswordStep1';
 import RecoverPasswordStep2 from './pages/Login/Password/RecoverPasswordStep2';
+import Home from './pages/Home/Home';
+
+
 const theme = extendTheme({
   fontConfig: {
     Quicksand: {
@@ -110,9 +113,10 @@ export default function App() {
     <NativeBaseProvider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator >
-          <Stack.Screen name="main" component={Main} options={{ headerShown: false }} />
+          <Stack.Screen name="Main" component={Main} options={{ headerShown: false }} />
           <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
           <Stack.Screen name="SignUp" component={SignUp} options={{  headerShown: false }}/>
+          <Stack.Screen name="Home" component={Home} options={{  headerShown: false }}/>
           <Stack.Screen name="StepOne" component={StepOne} options={{ headerShown: false }} />
           <Stack.Screen name="StepTwo" component={StepTwo} options={{ headerShown: false }} />
           <Stack.Screen name="StepThree" component={StepThree} options={{ headerShown: false }} />
