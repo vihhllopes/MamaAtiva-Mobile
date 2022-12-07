@@ -1,100 +1,117 @@
-import {Box, Pressable, Text, Flex, ScrollView, Link} from "native-base";
-import {View, TouchableOpacity} from 'react-native';
+import React from 'react';
+import axios from "axios";
+import { Box, Pressable, Text, Flex, ScrollView, Link } from "native-base";
+import { View, TouchableOpacity, Button } from 'react-native';
+import api from '../../src/services/api'
 
-export default function CardMB({navigation}) {
+export default function CardMB({ navigation }) {
+
+  const [milkBank, setMilkBank] = React.useState([]);
+
+  React.useEffect(() => {
+    api.get("/milk-bank").then((response) => {
+      setMilkBank(response.data);
+    });
+  }, []);
+
+  const handlePost = () => {
+    api.post("/milk-bank", {
+      name_bank: 'Banco',
+      address: 'Av. Prof. Moraes Rego, 1235 - Cidade Universitária - Recife/PE',
+    }).then(({ data }));
+  };
   return (
-      <ScrollView>
-        <Box alignItems="center" marginTop="4" marginBottom="1">
-          <Pressable rounded="8" overflow="hidden" borderWidth="1" borderColor="coolGray.300" maxW="96" shadow="3" bg="coolGray.100" p="5">
-            <Box>
-              <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
-                Banco de Leite e Centro de Incentivo ao aleitamento IMIP
-              </Text>
-              <Text mt="2" fontSize="sm" color="coolGray.700">
-              R. dos Coelhos, 300 - Boa Vista - Recife/PE
-              </Text>
-              <Flex>
-                <TouchableOpacity onPress={('Show')}>
-                  <Text mt="2" fontSize={12} fontWeight="medium" color="#FF5F24">
-                    Mais Informações
-                  </Text>
-                </TouchableOpacity>
-              </Flex>
-            </Box>
-          </Pressable>
-        </Box>
-
-        <Box alignItems="center" marginTop="2" marginBottom="1">
-          <Pressable onPress={() => console.log("I'm Pressed")} rounded="8" overflow="hidden" borderWidth="1" borderColor="coolGray.300" maxW="96" shadow="3" bg="#EEEFF8" p="5">
-            <Box>
-              <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
-                Banco de Leite Humano Maternidade Bandeira Filho
-              </Text>
-              <Text mt="2" fontSize="sm" color="coolGray.700">
-                R. Londrina, s/n - Afogados - Recife/PE
-              </Text>
-              <Flex>
+    <ScrollView>
+      <Box alignItems="center" marginTop="4" marginBottom="1">
+        <Pressable rounded="8" overflow="hidden" borderWidth="1" borderColor="coolGray.300" maxW="96" shadow="3" bg="coolGray.100" p="5">
+          <Box>
+            <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
+              {milkBank[0]?.name_bank}{" "}
+            </Text>
+            <Text mt="2" fontSize="sm" color="coolGray.700">
+              {milkBank[0]?.address}{" "}
+            </Text>
+            <Flex>
+              <TouchableOpacity onPress={('Show')}>
                 <Text mt="2" fontSize={12} fontWeight="medium" color="#FF5F24">
                   Mais Informações
                 </Text>
-              </Flex>
-            </Box>
-          </Pressable>
-        </Box>
+              </TouchableOpacity>
+            </Flex>
+          </Box>
+        </Pressable>
+      </Box>
 
-        <Box alignItems="center" marginTop="2" marginBottom="1" >
-          <Pressable onPress={() => console.log("I'm Pressed")} rounded="8" overflow="hidden" borderWidth="1" borderColor="coolGray.300" maxW="96" shadow="3" bg="coolGray.100" p="5">
-            <Box>
-              <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
-                Banco de Leite Humano Hospital das Clínicas
+      <Box alignItems="center" marginTop="2" marginBottom="1">
+        <Pressable onPress={() => console.log("I'm Pressed")} rounded="8" overflow="hidden" borderWidth="1" borderColor="coolGray.300" maxW="96" shadow="3" bg="#EEEFF8" p="5">
+          <Box>
+            <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
+              {milkBank[1]?.name_bank}{" "}
+            </Text>
+            <Text mt="2" fontSize="sm" color="coolGray.700">
+              {milkBank[1]?.address}{" "}            </Text>
+            <Flex>
+              <Text mt="2" fontSize={12} fontWeight="medium" color="#FF5F24">
+                Mais Informações
               </Text>
-              <Text mt="2" fontSize="sm" color="coolGray.700">
-                Av. Prof. Moraes Rego, 1235 - Cidade Universitária - Recife/PE
-              </Text>
-              <Flex>
-                <Text mt="2" fontSize={12} fontWeight="medium" color="#FF5F24">
-                  Mais Informações
-                </Text>
-              </Flex>
-            </Box>
-          </Pressable>
-        </Box>
+            </Flex>
+          </Box>
+        </Pressable>
+      </Box>
 
-        <Box alignItems="center" marginTop="2" marginBottom="1" >
-          <Pressable onPress={() => console.log("I'm Pressed")} rounded="8" overflow="hidden" borderWidth="1" borderColor="coolGray.300" maxW="96" shadow="3" bg="#EEEFF8" p="5">
-            <Box>
-              <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
-                Banco de Leite Humano Enfa. Tereza Cristina do Hospital Barão de Lucena
+      <Box alignItems="center" marginTop="2" marginBottom="1" >
+        <Pressable onPress={() => console.log("I'm Pressed")} rounded="8" overflow="hidden" borderWidth="1" borderColor="coolGray.300" maxW="96" shadow="3" bg="coolGray.100" p="5">
+          <Box>
+            <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
+              {milkBank[2]?.name_bank}{" "}            </Text>
+            <Text mt="2" fontSize="sm" color="coolGray.700">
+              {milkBank[2]?.address}{" "}
+            </Text>
+            <Flex>
+              <Text mt="2" fontSize={12} fontWeight="medium" color="#FF5F24">
+                Mais Informações
               </Text>
-              <Text mt="2" fontSize="sm" color="coolGray.700">
-                Av. Prof. Moraes Rego, 1235 - Cidade Universitária - Recife/PE
-              </Text>
-              <Flex>
-                <Text mt="2" fontSize={12} fontWeight="medium" color="#FF5F24">
-                  Mais Informações
-                </Text>
-              </Flex>
-            </Box>
-          </Pressable>
-        </Box>
+            </Flex>
+          </Box>
+        </Pressable>
+      </Box>
 
-        <Box alignItems="center" marginTop="2" marginBottom="1" >
-          <Pressable onPress={() => console.log("I'm Pressed")} rounded="8" overflow="hidden" borderWidth="1" borderColor="coolGray.300" maxW="96" shadow="3" bg="coolGray.100" p="5">
-            <Box>
-              <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
-                Banco de Leite Humano Dra. Sônia do Hospital Agamenon Magalhães
+      <Box alignItems="center" marginTop="2" marginBottom="1" >
+        <Pressable onPress={() => console.log("I'm Pressed")} rounded="8" overflow="hidden" borderWidth="1" borderColor="coolGray.300" maxW="96" shadow="3" bg="#EEEFF8" p="5">
+          <Box>
+            <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
+              {milkBank[3]?.name_bank}{" "}            </Text>
+            <Text mt="2" fontSize="sm" color="coolGray.700">
+              {milkBank[3]?.address}{" "}            </Text>
+            <Flex>
+              <Text mt="2" fontSize={12} fontWeight="medium" color="#FF5F24">
+                Mais Informações
               </Text>
-              <Text mt="2" fontSize="sm" color="coolGray.700">
-                Estrada do Arraial, 2723 - Casa Amarela - Recife/PE
+            </Flex>
+          </Box>
+        </Pressable>
+      </Box>
+
+      <Box alignItems="center" marginTop="2" marginBottom="1" >
+        <Pressable onPress={() => console.log("I'm Pressed")} rounded="8" overflow="hidden" borderWidth="1" borderColor="coolGray.300" maxW="96" shadow="3" bg="coolGray.100" p="5">
+          <Box>
+            <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
+              {milkBank[4]?.name_bank}{" "}
+            </Text>
+            <Text mt="2" fontSize="sm" color="coolGray.700">
+              {milkBank[4]?.address}{" "}
+            </Text>
+            <Flex>
+              <Text mt="2" fontSize={12} fontWeight="medium" color="#FF5F24">
+                Mais Infomações
               </Text>
-              <Flex>
-                <Text mt="2" fontSize={12} fontWeight="medium" color="#FF5F24">
-                  Mais Informações
-                </Text>
-              </Flex>
-            </Box>
-          </Pressable>
-        </Box>
-      </ScrollView>
+            </Flex>
+          </Box>
+        </Pressable>
+        <Button fontSize={12} fontWeight="medium" color="#FF5F24" title="Adicionar Novo" onPress={() => handlePost} />
+      </Box>
+
+    </ScrollView>
+
   );
 }
