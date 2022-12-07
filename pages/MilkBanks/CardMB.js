@@ -14,12 +14,18 @@ export default function CardMB({ navigation }) {
     });
   }, []);
 
-  const handlePost = () => {
-    api.post("/milk-bank", {
-      name_bank: 'Banco',
-      address: 'Av. Prof. Moraes Rego, 1235 - Cidade Universitária - Recife/PE',
+
+
+  const handlePost = async () => {
+    await api.post('/milk-bank', {
+      name_bank: "Banco",
+      address: "Av. Prof. Moraes Rego, 1235 - Cidade Universitária - Recife/PE"
     }).then(({ data }));
-  };
+  }
+
+  
+
+
   return (
     <ScrollView>
       <Box alignItems="center" marginTop="4" marginBottom="1">
@@ -108,9 +114,10 @@ export default function CardMB({ navigation }) {
             </Flex>
           </Box>
         </Pressable>
-        <Button fontSize={12} fontWeight="medium" color="#FF5F24" title="Adicionar Novo" onPress={() => handlePost} />
+       
       </Box>
-
+ <Button fontSize={12} fontWeight="medium" color="#FF5F24" title="Adicionar Novo"  onPress={() => handlePost()} />
+ 
     </ScrollView>
 
   );
