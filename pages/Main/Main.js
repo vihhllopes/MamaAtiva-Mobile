@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-import WhiteButton from "../../components/button/Button";
 
 export default function Main({ navigation }) {
   const tema = useStoreState((state) => state.tema);

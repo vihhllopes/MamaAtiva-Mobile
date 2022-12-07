@@ -16,11 +16,9 @@ export default function CardMB({ navigation }) {
   }, []);
 
   const handlePost = async () => {
-    await api
-      .post("/milk-bank", {
-        name_bank: "Banco",
-        address:
-          "Av. Prof. Moraes Rego, 1235 - Cidade Universitária - Recife/PE",
+    await api.post("/milk-bank", {
+        name_bank: "teste1",
+        address:"Av. Prof. Moraes Rego, 1235 - Cidade Universitária - Recife/PE",
       })
       .then({ data });
   };

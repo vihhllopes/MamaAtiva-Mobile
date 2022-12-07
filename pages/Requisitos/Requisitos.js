@@ -44,7 +44,8 @@ export default function Requisitos({ navigation }) {
             source={require("../../assets/remedios.png")}
             style={styles.icons}
           />
-          <Text style={styles.text}>Produzir leite materno excendente</Text>
+          <Text style={styles.text}>Não usar medicamentos
+            que impeçam a doação </Text>
         </View>
 
         <View>
