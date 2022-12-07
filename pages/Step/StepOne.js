@@ -1,10 +1,11 @@
-import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Image, TouchableOpacity,ScrollView } from "react-native";
 import { Card, Center, Box, Text } from "native-base";
 import { useStoreState } from "easy-peasy";
 
 export default function StepOne({ navigation }) {
   const tema = useStoreState((state) => state.tema);
   return (
+    <ScrollView>
     <View style={{ backgroundColor: tema }}>
       <View style={[styles.container, { backgroundColor: tema }]}>
         <Image
@@ -54,6 +55,7 @@ export default function StepOne({ navigation }) {
         </TouchableOpacity>
       </View>
     </View>
+    </ScrollView>
   );
 }
 const styles = StyleSheet.create({

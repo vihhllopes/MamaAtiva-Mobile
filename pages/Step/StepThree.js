@@ -1,4 +1,4 @@
-import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Image, TouchableOpacity,ScrollView} from "react-native";
 
 import { Card, Center, Text } from "native-base";
 import { CardBase } from "@rneui/base/dist/Card/Card";
@@ -7,6 +7,7 @@ import { useStoreState } from "easy-peasy";
 export default function StepOne({ navigation }) {
   const tema = useStoreState((state) => state.tema);
   return (
+    <ScrollView>
     <Center w="100%">
       <View style={{ backgroundColor: tema }}>
         <View style={[styles.container, { backgroundColor: tema }]}>
@@ -55,6 +56,7 @@ export default function StepOne({ navigation }) {
         </View>
       </View>
     </Center>
+    </ScrollView>
   );
 }
 const styles = StyleSheet.create({
